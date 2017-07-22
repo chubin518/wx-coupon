@@ -1,0 +1,86 @@
+/* productbox.wxss */
+
+.product-container {
+  background-color: #fff;
+  padding: 0.2em;
+  padding-top: 0.4em;
+  text-align: center;
+  overflow: hidden;
+}
+
+.product-box {
+  width: 49%;
+  display: block;
+  text-align: left;
+  margin-bottom: 0.7em;
+  margin-left: 0.15em;
+  float: left;
+}
+
+.product-box .product-img-box image {
+  width: 100%;
+  border: none;
+  vertical-align: top;
+  margin-top: -1rem;
+  height: 360rpx;
+}
+
+.product-title {
+  word-break: break-all;
+  word-wrap: break-word;
+  width: 100%;
+  text-align: left;
+  font-size: 26rpx;
+  line-height: 30rpx;
+  margin: 10rpx;
+}
+
+.product-price {
+  color: #ccc;
+  font-size: 22rpx;
+  line-height: 32rpx;
+  padding: 0 10rpx;
+}
+
+.product-price text {
+  color: #a3a3a3;
+  font-size: 24rpx;
+  display: inline-block;
+}
+
+.product-price .price {
+  color: #ff4b5f;
+  font-size: 28rpx;
+  padding: 0 10rpx;
+  display: inline-block;
+}
+
+.product-price .sold-wrapper {
+  position: relative;
+  float: right;
+  padding: 5rpx 0rpx;
+}
+
+.product-price .sold-wrapper .sold-num {
+  color: #ecabab;
+  font-size: 22rpx;
+}
+
+.product-price .sold-wrapper .text {
+  color: #a3a3a3;
+  font-size: 22rpx;
+}
+
+.product-coupon {
+  position: relative;
+  z-index: 10;
+  font-size: 24rpx;
+  text-align: center;
+  background-color: #e53563;
+  height: 1rem;
+  line-height: 1rem;
+  color: #fff;
+  float: right;
+  padding: 0px 5px;
+  font-family: "Microsoft Yahei";
+}

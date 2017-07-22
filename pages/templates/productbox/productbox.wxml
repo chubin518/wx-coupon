@@ -1,0 +1,20 @@
+<!--productbox.wxml-->
+<template name="productbox">
+  <view class="product-container">
+    <view class="product-box" wx:for="{{products}}" wx:key="index" data-id="{{item.id}}">
+      <view class="product-coupon">￥{{item.coupon}}券</view>
+      <view class="product-img-box">
+        <image src="{{item.image}}"></image>
+      </view>
+      <view class="product-title">{{item.title}}</view>
+      <view class="product-price">
+        <text class="text">券后</text>
+        <text class="price">￥{{item.price}}</text>
+        <view class="sold-wrapper">
+          <text class="sold-num">4897</text>
+          <text class="text">人已买</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
