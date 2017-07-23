@@ -1,6 +1,7 @@
 /* index.wxss */
 @import "../templates/loadmore/loadmore.wxss";
 @import "../templates/productbox/productbox.wxss";
+@import "../templates/searchbar/searchbar.wxss";
 
 .container {
   background-color: #faf5f6;

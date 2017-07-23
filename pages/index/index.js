@@ -1,4 +1,6 @@
 // index.js
+var searchbar = require("../templates/searchbar/searchbar.js");
+
 Page({
 
   /**
@@ -9,16 +11,17 @@ Page({
     skillProducts: [],
     categories: [],
     currentCat: 0,
-    products:[]
+    products: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    searchbar.init(this, []);
     var that = this;
     that.setData({
-      currentCat:0,
+      currentCat: 0,
       banners: [{
         id: 0,
         image: 'https://img.alicdn.com/imgextra/i2/2508158775/TB2dqVEX0AmyKJjSZFKXXXCQXXa_!!2508158775.jpg'
@@ -94,36 +97,36 @@ Page({
   /**
    * 
    */
-  loadMoreData(){
+  loadMoreData() {
     var datas = [{
-        id: 0,
-        image: "https://img.alicdn.com/imgextra/i2/1872722147/TB2rWGCvrFkpuFjy1XcXXclapXa_!!1872722147.jpg_240x240.jpg",
-        coupon: 200,
-        price: 50,
-        sold: 123,
-        title: "壁灯床头卧室灯简约现代客厅过道灯"
-      }, {
-          id: 1,
-          image: "https://img.alicdn.com/imgextra/i1/1733862031/TB2JKTUaxolyKJjSZFDXXbNfpXa_!!1733862031.jpg_240x240.jpg",
-          coupon: 10,
-          price: 20,
-          sold: 123,
-          title: "叶罗丽儿童帐篷室内游戏屋梦幻城堡"
-        }, {
-          id: 2,
-          image: "https://img.alicdn.com/imgextra/i3/TB1XEjTRpXXXXb5apXXYXGcGpXX_M2.SS2_240x240.jpg",
-          coupon: 10,
-          price: 20,
-          sold: 123,
-          title: "强力透明无痕胶防水耐高温双面胶"
-        }, {
-          id: 3,
-          image: "https://img.alicdn.com/imgextra/i2/2931349135/TB2s2uMaJAmyKJjSZFKXXXCQXXa_!!2931349135.jpg_240x240.jpg",
-          coupon: 10,
-          price: 20,
-          sold: 123,
-          title: "好伊贝婴儿棉签新生儿耳鼻清洁棒"
-        }];
+      id: 0,
+      image: "https://img.alicdn.com/imgextra/i2/1872722147/TB2rWGCvrFkpuFjy1XcXXclapXa_!!1872722147.jpg_240x240.jpg",
+      coupon: 200,
+      price: 50,
+      sold: 123,
+      title: "壁灯床头卧室灯简约现代客厅过道灯"
+    }, {
+      id: 1,
+      image: "https://img.alicdn.com/imgextra/i1/1733862031/TB2JKTUaxolyKJjSZFDXXbNfpXa_!!1733862031.jpg_240x240.jpg",
+      coupon: 10,
+      price: 20,
+      sold: 123,
+      title: "叶罗丽儿童帐篷室内游戏屋梦幻城堡"
+    }, {
+      id: 2,
+      image: "https://img.alicdn.com/imgextra/i3/TB1XEjTRpXXXXb5apXXYXGcGpXX_M2.SS2_240x240.jpg",
+      coupon: 10,
+      price: 20,
+      sold: 123,
+      title: "强力透明无痕胶防水耐高温双面胶"
+    }, {
+      id: 3,
+      image: "https://img.alicdn.com/imgextra/i2/2931349135/TB2s2uMaJAmyKJjSZFKXXXCQXXa_!!2931349135.jpg_240x240.jpg",
+      coupon: 10,
+      price: 20,
+      sold: 123,
+      title: "好伊贝婴儿棉签新生儿耳鼻清洁棒"
+    }];
     console.log(this.data.currentCat);
     if (this.data.currentCat == 0) {
       this.setData({
@@ -135,12 +138,12 @@ Page({
       });
     }
   },
-/**
- * tab导航切换
- */
+  /**
+   * tab导航切换
+   */
   tabClick: function (e) {
     this.setData({
-      currentCat:e.currentTarget.id
+      currentCat: e.currentTarget.id
     });
     this.loadMoreData();
   },
