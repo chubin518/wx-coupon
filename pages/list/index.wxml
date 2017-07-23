@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<view class="container">
 <import src="../templates/searchbar/searchbar.wxml" />
 <template is="searchbar" data="{{searchParam}}"></template>
 
@@ -15,4 +16,5 @@
 
    <import src="../templates/loadmore/loadmore.wxml" />
   <template wx:if="{{!products||products.length<=0}}" is="loadmore"></template>
+</view>
 </view>

@@ -1,9 +1,9 @@
 <!--index.wxml-->
 
-<import src="../templates/searchbar/searchbar.wxml" />
-<template is="searchbar"  data="{{searchParam}}"></template>
 
 <view class="container">
+  <import src="../templates/searchbar/searchbar.wxml" />
+  <template is="searchbar" data="{{searchParam}}"></template>
 
   <view class="swiper-container">
     <swiper class="swiper-box" indicator-dots='true' autoplay='true'>

@@ -1,0 +1,194 @@
+/* index.wxss */
+
+.swiper-container {
+  width: 750rpx;
+  position: relative;
+}
+
+.swiper-box {
+  width: 100%;
+  height: 430rpx;
+}
+
+swiper-item image {
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  height: 430rpx;
+}
+
+.goods-info {
+  background-color: #fff;
+  padding: 35rpx 0;
+  margin-bottom: 24rpx;
+  width: 100%;
+}
+
+.product-title {
+  word-break: break-all;
+  word-wrap: break-word;
+  text-align: left;
+  font-size: 30rpx;
+  margin: 0 10rpx 0 20rpx;
+}
+
+.product-price {
+  margin: 0 15px;
+  margin-top: 6px;
+  position: relative;
+  height: 30px;
+}
+
+.product-price-qh {
+  font-size: 12px;
+  color: #999;
+  margin-right: 20px;
+  float: left;
+}
+
+.product-price-qh b {
+  color: #fe0000;
+  margin-right: 7px;
+  font-size: 20px;
+  position: relative;
+  top: 2px;
+}
+
+.product-coupon {
+  font-size: 10px;
+  height: 17px;
+  line-height: 17px;
+  position: relative;
+  text-indent: 4px;
+  color: white;
+  margin-top: 6px;
+  float: left;
+}
+
+.product-coupon text {
+  position: absolute;
+  left: 0;
+  width: 19px;
+  text-indent: 5px;
+  height: 17px;
+  background-color: #ff6a00;
+  line-height: 18px;
+}
+
+.product-coupon b {
+  position: absolute;
+  left: 17px;
+  margin: 0;
+  font-size: 12px;
+  text-indent: 0;
+  text-align: center;
+  padding: 0 5px;
+  color: #ff6a00;
+  line-height: 16px;
+  height: 15px;
+  border: #ff9950 1px solid;
+}
+
+.product-sold {
+  color: #aaa;
+  font-size: 0.7rem;
+  position: relative;
+  padding-left: 19px;
+  margin-top: 8px;
+  float: right;
+}
+
+.product-sold i {
+  width: 15px;
+  height: 12px;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  background-size: 100%;
+}
+
+.product-sold b {
+  color: #ff6a00;
+  font-weight: normal;
+  font-family: Arial;
+}
+
+.instruction {
+  background-color: white;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  height: 50rpx;
+}
+
+.instruction-top {
+  height: 42rpx;
+  line-height: 42rpx;
+  padding: 20rpx;
+  border-bottom: 1px solid #f7f7f7;
+  font-size: 26rpx;
+}
+
+.instruction-left {
+  width: 126rpx;
+  height: 40rpx;
+  border-left: 3px solid red;
+  padding-left: 10rpx;
+}
+
+.instruction-body {
+  font-size: 26rpx;
+  padding: 20rpx;
+  line-height: 42rpx;
+}
+
+ol {
+  list-style-type: demical;
+  width: 100%;
+}
+
+ol li {
+  font-size: 14px;
+  color: #575757;
+  display: block;
+  padding-left: 8px;
+}
+
+.footer-box {
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  box-shadow: 0 0 8rpx 0;
+  line-height: 100rpx;
+}
+
+.footer-box .price {
+  padding-left: 10px;
+  width: 300rpx;
+  font-size: 16px;
+}
+
+.footer-box .coupon {
+  text-align: center;
+  width: 100rpx;
+  height: 100%;
+  background-color: #f69919;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  word-wrap: break-word;
+  padding: 0 20px 0 20px;
+}
+
+.footer-box .now-buy {
+  text-align: center;
+  height: 100%;
+  width: 350rpx;
+  line-height: 100rpx;
+  background-color: #e64340;
+  color: #fff;
+  font-size: 34rpx;
+}
