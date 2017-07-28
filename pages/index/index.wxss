@@ -3,26 +3,25 @@
 @import "../templates/productbox/productbox.wxss";
 @import "../templates/searchbar/searchbar.wxss";
 
-
 .swiper-container {
-  width: 750rpx;
+  width: 100%;
   position: relative;
 }
 
 .swiper-box {
   width: 100%;
-  height: 300rpx;
+  height: 400rpx;
 }
 
 swiper-item image {
   width: 100%;
   display: inline-block;
   overflow: hidden;
-  height: 300rpx;
+  height: 400rpx;
 }
 
 .skill {
-  margin-top: 5rpx;
+  margin-top: 8px;
   background-color: white;
   width: 100%;
 }
@@ -32,42 +31,42 @@ swiper-item image {
   line-height: 42rpx;
   padding: 20rpx;
   border-bottom: 1px solid #f7f7f7;
-  font-size: 26rpx;
+  font-size: 14px;
 }
 
 .skill-left {
   width: 126rpx;
   height: 40rpx;
   border-left: 3px solid red;
-  padding-left: 10rpx;
+  padding-left: 8px;
 }
 
 .skill-center {
-  margin-left: 24rpx;
   color: #222;
+  text-align: center;
 }
 
 .skill-center i {
   color: red;
-  font-size: 26rpx;
 }
 
 .skill-right {
   position: relative;
-  padding-right: 3rpx;
+  padding-right: 3px;
+  font-size: 12px;
 }
 
 .skill-list {
-  height: 290rpx;
+  height: 315rpx;
   display: flex;
   white-space: nowrap;
 }
 
 .skill-list .skill-li {
-  width: 25%;
+  width: 115px;
   height: 100%;
   position: relative;
-  margin-left: 3%;
+  margin-left: 10px;
   text-align: center;
   display: inline-block;
 }
@@ -79,7 +78,7 @@ swiper-item image {
 .coupon-wrapper {
   background-color: #ff970f;
   color: white;
-  font-size: 24rpx;
+  font-size: 12px;
   min-width: 100rpx;
   height: 40rpx;
   line-height: 40rpx;
@@ -87,34 +86,31 @@ swiper-item image {
   position: absolute;
   top: 20rpx;
   right: 0;
-  border-top-left-radius: 20rpx;
-  border-bottom-left-radius: 20rpx;
+  border-top-left-radius: 16rpx;
+  border-bottom-left-radius: 16rpx;
 }
 
 .skill-vipprice {
   color: #777;
-  font-size: 22rpx;
-  line-height: 32rpx;
-  margin-top: 16rpx;
+  line-height: 24px;
 }
 
 .skill-vipprice text {
-  font-size: 28rpx;
+  font-size: 14px;
   color: red;
-  font-weight: bold;
 }
 
 .skill-title {
-  font-size: 26rpx;
-  line-height: 30rpx;
-  margin-top: 4rpx;
+  line-height: 24px;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 3px;
 }
 
 .skill-img, .skill-img image {
-  width: 188rpx;
-  height: 188rpx;
+  width: 100%;
+  height: 210rpx;
 }
 
 .fl {
@@ -128,9 +124,8 @@ swiper-item image {
 .icon-link-wrapper {
   display: flex;
   height: 170rpx;
-  padding: 5rpx 0;
+  padding: 5px;
   background-color: #fff;
-  border-bottom: 1rpx solid #eee;
   width: 100%;
 }
 
@@ -147,14 +142,13 @@ swiper-item image {
 }
 
 .icon-link-wrapper .item .item-img image {
-  height: 110rpx;
-  width: 100%;
+  height: 100rpx;
+  width: 100rpx;
   margin: 0 auto;
 }
 
 .icon-link-wrapper .item .item-text {
-  font-size: 26rpx;
-  color: #aaa;
+  font-size: 12px;
   text-align: center;
 }
 
@@ -163,7 +157,7 @@ swiper-item image {
   height: 88rpx;
   background-color: #fff;
   overflow: hidden;
-  margin-top: 5rpx;
+  margin-top: 8px;
 }
 
 .cat-navbar {
@@ -176,7 +170,6 @@ swiper-item image {
 .cat-box {
   width: 120rpx;
   box-sizing: content-box;
-  font-size: 24rpx;
   line-height: 72rpx;
   text-align: center;
   display: inline-block;
@@ -184,9 +177,9 @@ swiper-item image {
 }
 
 .cat-narbar-item {
-  border-bottom: 3rpx solid #fff;
+  border-bottom: 2px solid #fff;
 }
 
 .cat-item-on {
-  border-bottom: 3rpx solid #e64340;
+  border-bottom: 2px solid #e64340;
 }

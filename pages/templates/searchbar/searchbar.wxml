@@ -12,7 +12,9 @@
                 </view>
                 <label class="weui-search-bar__label" wx:if="{{!searchParam.inputShowed}}" bindtap="showInput">
                     <icon class="weui-icon-search" type="search" size="14"></icon>
-                    <view class="weui-search-bar__text">输入关键字，找有券商品</view>
+                    <view class="weui-search-bar__text">
+                   输入关键字找有券商品
+                    </view>
                 </label>
             </view>
             <view class="weui-search-bar__cancel-btn" style="display:{{searchParam.inputShowed?'block':'none'}}" bindtap="hideInput">取消</view>

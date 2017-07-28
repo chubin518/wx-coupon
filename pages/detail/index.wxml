@@ -14,18 +14,18 @@
 
   <view class="goods-info">
     <view class="product-title">坡跟凉鞋女夏防水台欧美2017新款厚底[坡跟凉鞋女夏防水台欧美2017新款厚底]</view>
-    <view class="product-price">
-      <view class="product-price-qh">
-        <b><i>￥</i>39</b>券后价
+  <view class="product-price">
+        <text class="price">￥300</text>
+        <text class="text">券后价</text>
+        <view class="product-coupon">
+      <text class="c-text">券</text> <text class="coupon-price">￥10</text> 
+        </view>
+        <view class="sold-wrapper">
+          <text class="sold-num">4897</text>
+          <text class="text">人已买</text>
+        </view>
+
       </view>
-      <view class="product-coupon">
-        <text>券</text>
-        <b><i>￥</i>30</b>
-      </view>
-      <view class="product-sold">
-        <i></i><b>113</b> 人已买
-      </view>
-    </view>
   </view>
 
   <view class="instruction">
@@ -37,15 +37,15 @@
     <view class="instruction-body">
       <ol>
         <li>1.点击下方“领取淘口令”按钮</li>
-        <li>2.打开淘宝客户端，在首页停留3~5秒，等待跳出优惠券领取页面</li>
-        <li>3.打开优惠券领取页面，领取购买</li>
+        <li>2.打开淘宝客户端，在首页停留3~5秒会跳出优惠券领取页面</li>
+        <li>3.点击打开直接领券购买</li>
       </ol>
     </view>
   </view>
 
   <view class="footer-box">
     <view class="price">
-      券后价:<i style="color: #FF6600;font-style: normal;">¥<b style="font-size:22px;">39</b></i>
+      券后价:<i style="color: #FF6600;font-style: normal;">¥<b style="font-size:20px;">39</b></i>
     </view>
     <view class="coupon" bindtap="tobuy">
      优惠券30元

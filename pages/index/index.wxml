@@ -51,12 +51,11 @@
         <i>19:00</i> 正在抢购
       </view>
       <view class="skill-right fr">
-        查看更多>
+        查看更多 >
       </view>
     </view>
     <scroll-view scroll-x='true' class="skill-list">
       <view class="skill-li" wx:for="{{skillProducts}}" wx:key="id">
-        <navigator url="">
           <view class="coupon-wrapper">￥{{item.coupon}}券</view>
           <view class="skill-img">
             <image src="{{item.image}}" alt=""></image>
@@ -65,7 +64,6 @@
           <view class="skill-vipprice">
             <text>￥{{item.price}}</text> 券后
           </view>
-        </navigator>
       </view>
     </scroll-view>
   </view>

@@ -1,20 +1,22 @@
 <!--index.wxml-->
 <view class="container">
-<import src="../templates/searchbar/searchbar.wxml" />
-<template is="searchbar" data="{{searchParam}}"></template>
+  <import src="../templates/searchbar/searchbar.wxml" />
+  <template is="searchbar" data="{{searchParam}}"></template>
 
-<view class="list-container">
-  <view class="status-box">
-    <view bindtap="statusTap" class="status-label {{index == currentTpye ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}">
-      {{item}}
-      <view class="{{tabClass[index]}}" wx:if="{{index!=0}}"></view>
-    </view>
+  <view class="list-container">
+<!--     <view class="status-box">
+      <view bindtap="statusTap" class="status-label {{index == currentTpye ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}">
+        {{item}}
+        <view class="{{tabClass[index]}}" wx:if="{{index!=0}}"></view>
+      </view>
+    </view> -->
+
+    <view class="line"></view>
+
+    <import src="../templates/productbox/productbox.wxml" />
+    <template data="{{products}}" is="productbox"></template>
+
+    <import src="../templates/loadmore/loadmore.wxml" />
+    <template wx:if="{{!products||products.length<=0}}" is="loadmore"></template>
   </view>
-
-  <import src="../templates/productbox/productbox.wxml" />
-  <template data="{{products}}" is="productbox"></template>
-
-   <import src="../templates/loadmore/loadmore.wxml" />
-  <template wx:if="{{!products||products.length<=0}}" is="loadmore"></template>
-</view>
 </view>

@@ -1,6 +1,5 @@
 /* loadmore.wxss */
 
-
 .weui-loadmore {
   width: 65%;
   margin: 1.5em auto;
@@ -23,6 +22,6 @@
   position: relative;
   top: -.9em;
   padding: 0 0.55em;
-  background-color: #faf5f6;
+  background-color: #fff;
   color: #999;
 }

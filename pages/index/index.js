@@ -104,14 +104,14 @@ Page({
       coupon: 200,
       price: 50,
       sold: 123,
-      title: "壁灯床头卧室灯简约现代客厅过道灯"
+      title: "壁灯床头卧室灯简约现代客厅过道灯壁灯床头卧室灯简约现代客厅过道灯壁灯床头卧室灯简约现代客厅过道灯"
     }, {
       id: 1,
       image: "https://img.alicdn.com/imgextra/i1/1733862031/TB2JKTUaxolyKJjSZFDXXbNfpXa_!!1733862031.jpg_240x240.jpg",
       coupon: 10,
       price: 20,
       sold: 123,
-      title: "叶罗丽儿童帐篷室内游戏屋梦幻城堡"
+      title: "叶罗丽儿童帐篷室内游戏屋梦幻城堡壁灯床头卧室灯简约现代客厅过道灯壁灯床头卧室灯简约现代客厅过道灯"
     }, {
       id: 2,
       image: "https://img.alicdn.com/imgextra/i3/TB1XEjTRpXXXXb5apXXYXGcGpXX_M2.SS2_240x240.jpg",
