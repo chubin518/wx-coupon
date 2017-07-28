@@ -105,7 +105,6 @@ swiper-item image {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 3px;
 }
 
 .skill-img, .skill-img image {
