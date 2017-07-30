@@ -1,18 +1,26 @@
 <!--productbox.wxml-->
 <template name="productbox">
   <view class="product-container">
-    <view class="product-box" wx:for="{{products}}" wx:key="index" data-id="{{item.id}}">
-      <view class="product-coupon">￥{{item.coupon}}券</view>
+    <view class="product-box" wx:for="{{products}}" wx:key="index" id="{{item.SPID}}" data-index="{{index}}" data-item="{{item}}" bindtap="RedirectToDetail">
+      <view class="product-coupon">￥{{item.CP}}券</view>
       <view class="product-img-box">
-        <image src="{{item.image}}"></image>
+        <image src="{{item.SPZT}}"></image>
       </view>
-      <view class="product-title">{{item.title}}</view>
+      <view class="product-title">{{item.SPMC}}</view>
+      <view class="sold-wrapper">
+      <view class="sold-price">
+      原价
+      <text>￥{{item.SPJG}}</text>
+      </view>
+      <view class="sold-num">
+      月销{{item.SPYXL}}件
+      </view>
+      <view class="float-clear"></view>
+      </view>
       <view class="product-price">
-        <text class="text">券后</text>
-        <text class="price">￥{{item.price}}</text>
-        <view class="sold-wrapper">
-          <text class="sold-num">4897</text>
-          <text class="text">人已买</text>
+        <view class="text"> 券后价</view>
+        <view class="price">
+        ￥{{item.FP}}
         </view>
       </view>
     </view>

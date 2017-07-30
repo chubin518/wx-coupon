@@ -1,6 +1,6 @@
 <!--loadmore.wxml-->
 <template name="loadmore">
  <view  class="weui-loadmore weui-loadmore_line">
-    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">俺也是有底线滴</view>
   </view>
 </template>

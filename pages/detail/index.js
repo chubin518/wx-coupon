@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    banners: [],
+    product: {},
+    banners: []
   },
 
   /**
@@ -13,18 +14,34 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    that.setData({
-      banners: [{
-        id: 0,
-        image: 'https://img.alicdn.com/imgextra/i2/2508158775/TB2dqVEX0AmyKJjSZFKXXXCQXXa_!!2508158775.jpg'
-      }, {
-        id: 1,
-        image: 'https://img.alicdn.com/imgextra/i3/2508158775/TB2RLnraNolyKJjSZPfXXawNpXa_!!2508158775.jpg'
-      }, {
-        id: 2,
-        image: 'https://img.alicdn.com/imgextra/i3/2508158775/TB2TJ1CXVokyKJjy1zbXXXZfVXa_!!2508158775.jpg'
-      }]
+    var key = options.pro;
+    var images = [];
+    wx.getStorage({
+      key: key,
+      success: function (res) {
+        var product = JSON.parse(res.data);
+        images.push({ id: 0, title: product.SPZT });
+        wx.setNavigationBarTitle({
+          title: product.SPMC,
+        })
+        that.setData({
+          product: product,
+          banners: images
+        });
+        wx.removeStorage({
+          key: key,
+          success: function (res) { },
+        })
+      },
+      fail: function (res) {
+        wx.removeStorage({
+          key: key,
+          success: function (res) { },
+        })
+        wx.navigateBack({});
+      }
     });
+
   },
 
   /**

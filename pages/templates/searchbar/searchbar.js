@@ -14,13 +14,17 @@ function init(page) {
     that.setData({
       searchParam: tempData
     });
-    console.log(that.data.searchParam);
   };
-  that.hideInput = function () {
-    tempData.inputShowed = false;
-    tempData.inputVal = "";
-    that.setData({
-      searchParam: tempData
+  that.searchInput = function () {
+    if (tempData.inputVal.length <= 0) {
+      tempData.inputShowed = true;
+      that.setData({
+        searchParam: tempData
+      });
+      return;
+    }
+    wx.navigateTo({
+      url: '/pages/list/index?kw=' + tempData.inputVal,
     });
   };
   that.clearInput = function () {
@@ -34,6 +38,18 @@ function init(page) {
     that.setData({
       searchParam: tempData
     });
+  }
+  that.inputConfirm = function (e) {
+    if (e.detail.value.length <= 0) {
+      tempData.inputShowed = true;
+      that.setData({
+        searchParam: tempData
+      });
+      return;
+    }
+    wx.navigateTo({
+      url: '/pages/list/index?kw=' + e.detail.value,
+    })
   }
 }
 

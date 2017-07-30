@@ -3,6 +3,11 @@
 @import "../templates/productbox/productbox.wxss";
 @import "../templates/searchbar/searchbar.wxss";
 
+.line {
+  height: 0px;
+  margin-top: 45px;
+}
+
 .swiper-container {
   width: 100%;
   position: relative;
@@ -126,10 +131,13 @@ swiper-item image {
   padding: 5px;
   background-color: #fff;
   width: 100%;
+  white-space: nowrap;
 }
 
 .icon-link-wrapper .item {
-  flex: 1;
+  flex: 1 0 auto;
+  display: inline-block;
+  width:25%;
 }
 
 .icon-link-wrapper .item .item-img {
@@ -153,7 +161,7 @@ swiper-item image {
 
 .cat-container {
   width: 100%;
-  height: 88rpx;
+  height: 75rpx;
   background-color: #fff;
   overflow: hidden;
   margin-top: 8px;
@@ -161,15 +169,20 @@ swiper-item image {
 
 .cat-navbar {
   white-space: nowrap;
-  display: flex;
-  height: 88rpx;
+  height: 75rpx;
   background-color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
 }
 
 .cat-box {
   width: 120rpx;
   box-sizing: content-box;
-  line-height: 72rpx;
+  line-height: 73rpx;
   text-align: center;
   display: inline-block;
   overflow: hidden;

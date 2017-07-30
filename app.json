@@ -2,30 +2,13 @@
   "pages": [
     "pages/index/index",
     "pages/list/index",
-    "pages/detail/index"
+    "pages/detail/index",
+    "pages/favorite/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "ceshi",
+    "navigationBarTitleText": "一起领券网",
     "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "selectedColor": "#F5B223",
-    "color": "#9A9A9A",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/list/index",
-        "text": "列表页"
-      },
-      {
-        "pagePath": "pages/detail/index",
-        "text": "详情页"
-      }
-    ]
   }
 }

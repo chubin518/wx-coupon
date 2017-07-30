@@ -1,0 +1,38 @@
+/* index.wxss */
+
+@import "../templates/productbox/productbox.wxss";
+@import "../templates/loadmore/loadmore.wxss";
+
+.list-container {
+  width: 100%;
+  position: relative;
+}
+
+.status-box {
+  width: 100%;
+  line-height: 72rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding-bottom: 5px;
+}
+
+.status-box .status-label {
+  width: 150rpx;
+  height: 100%;
+  text-align: center;
+  color: #353535;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.status-box .status-label.active {
+  color: #e64340;
+  border-bottom: 2px solid #e64340;
+}
+
+.line {
+  height: 0px;
+  margin: 4px;
+}

@@ -8,6 +8,12 @@ page {
   font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
 }
 
+image{
+  border: none;
+}
+.float-clear{
+  clear:both;
+}
 .container {
   min-height: 100%;
   width: 100%;

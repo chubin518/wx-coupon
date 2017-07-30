@@ -1,7 +1,6 @@
 // index.js
 
-var searchbar = require("../templates/searchbar/searchbar.js");
-var productbox = require("../templates/productbox/productbox.js");
+var config = require('../../utils/config.js');
 var app = getApp();
 Page({
 
@@ -9,34 +8,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pageno:1,
-    isShow:false,
     products: [],
-    kw:""
+    currentTpye: 0,
+    statusType: ["达人指数", "销量", "价格"],
+    isShow: false,
+    pageno: 1,
+    ft: 0
   },
   /**
-   * 生命周期函数--监听页面加载
+   * 
    */
-  onLoad: function (options) {
-    searchbar.init(this, []);
-    productbox.init(this,[]);
-    var kw=options.kw;
-    this.setData({
-      kw: kw
-    });
-    wx.setNavigationBarTitle({
-      title: kw
-    })
-    this.loadMoreData();
-  },
-
   loadMoreData() {
     var that = this;
-    var reqParams = {
-      k: that.data.kw,
-      pageno: that.data.pageno
-    };
-    app.utils.doGet('Product', reqParams, function (res) {
+    app.utils.doGet('favorite', {
+      sort: that.data.currentTpye,
+      pageno: that.data.pageno,
+      t: that.data.ft
+    }, function (res) {
       if (res) {
         var datas = that.data.products;
         if (!datas) {
@@ -47,11 +35,35 @@ Page({
         }
         that.setData({
           products: datas,
-          pageno: reqParams.pageno + 1,
+          pageno: that.data.pageno + 1,
           isShow: res.Datas.length <= 0
         });
       }
     });
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.setData({
+      ft: options.ft
+    });
+    wx.setNavigationBarTitle({
+      title: options.title,
+    })
+    this.loadMoreData();
+  },
+
+  statusTap: function (e) {
+    var curType = e.currentTarget.dataset.index;
+    this.data.currentTpye = curType
+    this.setData({
+      currentTpye: curType,
+      pageno: 1,
+      isShow: false,
+      products:[]
+    });
+    this.loadMoreData();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

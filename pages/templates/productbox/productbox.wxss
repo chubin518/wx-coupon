@@ -16,6 +16,7 @@
   float: left;
   border: 1px solid #eeeff1;
   padding-right: 3px;
+  padding-bottom: 5px;
 }
 
 .product-box .product-img-box image {
@@ -37,38 +38,45 @@
   line-height: 1.6;
   margin: 6px;
   padding-left: 3px;
+  height: 35px;
 }
 
 .product-price {
-  color: #ccc;
+  color: #a3a3a3;
   line-height: 1.5;
-  padding: 0 10rpx;
+  float: none;
+  margin: 4px 6px;
 }
 
-.product-price text {
-  color: #a3a3a3;
+.product-price .text {
   display: inline-block;
 }
 
 .product-price .price {
   color: #ff4b5f;
-  font-size: 14px;
   padding: 0 10rpx;
   display: inline-block;
+  font-weight: bolder;
+  font-size: 13px;
 }
 
-.product-price .sold-wrapper {
-  position: relative;
-  float: right;
-  padding: 5rpx 0rpx;
-}
-
-.product-price .sold-wrapper .sold-num {
-  color: #ecabab;
-}
-
-.product-price .sold-wrapper .text {
+.sold-wrapper {
   color: #a3a3a3;
+  font-size: 11px;
+  margin: 0 3px 0 5px;
+}
+
+.sold-wrapper .sold-price {
+  float: left;
+}
+
+.sold-wrapper .sold-price text {
+  text-decoration: line-through;
+}
+
+.sold-wrapper .sold-num {
+  color: #ecabab;
+  float: right;
 }
 
 .product-coupon {
@@ -82,4 +90,5 @@
   color: #fff;
   float: right;
   padding: 0px 5px;
+  top: 3px;
 }
