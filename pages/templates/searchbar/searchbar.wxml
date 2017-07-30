@@ -5,7 +5,7 @@
             <view class="weui-search-bar__form">
                 <view class="weui-search-bar__box">
                     <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-                    <input type="text" class="weui-search-bar__input" auto-focus='true' placeholder="输入关键字找有券商品" value="{{searchParam.inputVal}}" focus="{{searchParam.inputShowed}}" bindinput="inputTyping" bindconfirm="inputConfirm" confirm-type="search"/>
+                    <input type="text" class="weui-search-bar__input" placeholder="输入关键字找有券商品" value="{{searchParam.inputVal}}" focus="{{searchParam.inputShowed}}" bindinput="inputTyping" bindconfirm="inputConfirm" confirm-type="search"/>
                      <view class="weui-icon-clear" style="display:{{searchParam.inputShowed?'block':'none'}}" bindtap="clearInput">
                         <icon type="clear" size="14"></icon>
                     </view> 

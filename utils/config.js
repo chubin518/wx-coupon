@@ -1,5 +1,5 @@
 module.exports = {
-  baseUri: 'https://www.51hui.xin/search/',
+  baseUri: 'https://www.51hui.xin/',
   favorityNavbars: [{
     id: 1,
     name: "9块9包邮",

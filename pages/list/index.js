@@ -36,7 +36,7 @@ Page({
       k: that.data.kw,
       pageno: that.data.pageno
     };
-    app.utils.doGet('Product', reqParams, function (res) {
+    app.utils.doGet('search/Product', reqParams, function (res) {
       if (res) {
         var datas = that.data.products;
         if (!datas) {

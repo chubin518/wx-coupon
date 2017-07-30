@@ -127,8 +127,7 @@ swiper-item image {
 
 .icon-link-wrapper {
   display: flex;
-  height: 170rpx;
-  padding: 5px;
+  height: 180rpx;
   background-color: #fff;
   width: 100%;
   white-space: nowrap;
@@ -155,7 +154,6 @@ swiper-item image {
 }
 
 .icon-link-wrapper .item .item-text {
-  font-size: 12px;
   text-align: center;
 }
 
@@ -165,6 +163,7 @@ swiper-item image {
   background-color: #fff;
   overflow: hidden;
   margin-top: 8px;
+  padding-bottom: 3px;
 }
 
 .cat-navbar {

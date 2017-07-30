@@ -1,6 +1,7 @@
 // index.js
-Page({
+var app = getApp();
 
+Page({
   /**
    * 页面的初始数据
    */
@@ -43,7 +44,43 @@ Page({
     });
 
   },
+  tobuy: function () {
+    var reqParams = {
+      url: this.data.product.SPYHQTGLJ,
+      title: this.data.product.SPMC,
+      picurl: this.data.product.SPZT
+    };
+    app.utils.doGet('tpwd/Create', reqParams, function (resp) {
+      var tpwd = '￥xNm40aCaJDR￥';
+      if (resp) {
+        tpwd=resp
+      }
 
+      wx.setClipboardData({
+        data: resp,
+        success: function (res) {
+          wx.showModal({
+            title: '领取成功',
+            content: '打开淘宝客户端即可购买',
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+        },
+        fail: function (res) {
+          wx.showToast({
+            title: '失败',
+            icon: 'warn',
+            duration: 3000
+          });
+        }
+      })
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

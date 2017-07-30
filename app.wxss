@@ -2,10 +2,16 @@
 
 page {
   background-color: #f8f8f8;
-  font-size: 12px;
+  font-size: 14px;
   height: 100%;
+  width: 100%;
+  padding: 0;
   line-height: 1.6;
   font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+view{
+  margin: 0px;
+  padding: 0px;
 }
 
 image{

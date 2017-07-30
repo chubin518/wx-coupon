@@ -1,6 +1,5 @@
 // index.js
-
-var config = require('../../utils/config.js');
+var productbox = require("../templates/productbox/productbox.js");
 var app = getApp();
 Page({
 
@@ -20,7 +19,7 @@ Page({
    */
   loadMoreData() {
     var that = this;
-    app.utils.doGet('favorite', {
+    app.utils.doGet('search/favorite', {
       sort: that.data.currentTpye,
       pageno: that.data.pageno,
       t: that.data.ft
@@ -45,6 +44,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    productbox.init(this,[]);
     this.setData({
       ft: options.ft
     });

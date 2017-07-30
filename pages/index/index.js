@@ -29,10 +29,19 @@ Page({
     wx.getStorage({
       key: 'home_common',
       success: function (res) {
+        if(!res.data){
+          app.utils.doGet('search/config', {}, function (res) {
+            that.initData(res)
+            wx.setStorage({
+              key: 'home_common',
+              data: res,
+            });
+          });
+        }
         that.initData(res.data);
       },
       fail: function () {
-        app.utils.doGet('config', {}, function (res) {
+        app.utils.doGet('search/config', {}, function (res) {
           that.initData(res)
           wx.setStorage({
             key: 'home_common',
@@ -118,7 +127,7 @@ Page({
       cat: that.data.currentCat,
       pageno: that.data.pageno
     };
-    app.utils.doGet('Cats', reqParams, function (res) {
+    app.utils.doGet('search/Cats', reqParams, function (res) {
       if (res) {
         var datas = that.data.products;
         if (!datas) {

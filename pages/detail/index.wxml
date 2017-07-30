@@ -14,18 +14,18 @@
 
   <view class="goods-info">
     <view class="product-title">{{product.SPMC}}</view>
-  <view class="product-price">
-        <text class="price">￥{{product.FP}}</text>
-        <text class="text">券后价</text>
-        <view class="product-coupon">
-      <text class="c-text">券</text> <text class="coupon-price">￥{{product.CP}}</text> 
-        </view>
-        <view class="sold-wrapper">
-          <text class="sold-num">{{product.SPYXL}}</text>
-          <text class="text">人已买</text>
-        </view>
-
+    <view class="product-price">
+      <text class="price">￥{{product.FP}}</text>
+      <text class="text">券后价</text>
+      <view class="product-coupon">
+        <text class="c-text">券</text> <text class="coupon-price">￥{{product.CP}}</text>
       </view>
+      <view class="sold-wrapper">
+        <text class="sold-num">{{product.SPYXL}}</text>
+        <text class="text">人已买</text>
+      </view>
+
+    </view>
   </view>
 
   <view class="instruction">
@@ -36,7 +36,7 @@
     </view>
     <view class="instruction-body">
       <ol>
-        <li>1.点击下方“领取淘口令”按钮</li>
+        <li>1.点击下方“立即领券”按钮</li>
         <li>2.打开淘宝客户端，在首页停留3~5秒会跳出优惠券领取页面</li>
         <li>3.点击打开直接领券购买</li>
       </ol>
@@ -45,11 +45,13 @@
 
   <view class="footer-box">
     <view class="price">
-      券后价:<i style="color: #FF6600;font-style: normal;">¥<b style="font-size:20px;">39</b></i>
+      券后价:<i style="color: #FF6600;font-style: normal;">¥<b style="font-size:20px;">{{product.FP}}</b></i>
     </view>
     <view class="coupon">
-     优惠券30元
+      <view>优惠券</view>
+      <view>
+        {{product.CP}}元</view>
     </view>
-    <view class="now-buy" bindtap="tobuy">领取淘口令</view>
+    <view class="now-buy" bindtap="tobuy">立即领券</view>
   </view>
 </view>
