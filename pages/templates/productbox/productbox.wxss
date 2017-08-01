@@ -86,7 +86,6 @@
   background-color: #ff970f;
   border-top-left-radius: 16rpx;
   border-bottom-left-radius: 16rpx;
-  margin-top: 5px;
   color: #fff;
   float: right;
   padding: 0px 5px;

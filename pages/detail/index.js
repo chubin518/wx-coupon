@@ -61,13 +61,12 @@ Page({
         success: function (res) {
           wx.showModal({
             title: '领取成功',
-            content: '打开淘宝客户端即可购买',
+            content: '请打开【手机淘宝】客户端领券购买',
+            showCancel:false,
             success: function (res) {
-              if (res.confirm) {
-                console.log('用户点击确定')
-              } else if (res.cancel) {
-                console.log('用户点击取消')
-              }
+              // if (res.confirm) {
+              //   console.log('用户点击确定')
+              // } 
             }
           })
         },

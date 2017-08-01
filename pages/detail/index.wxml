@@ -36,13 +36,14 @@
     </view>
     <view class="instruction-body">
       <ol>
-        <li>1.点击下方“立即领券”按钮</li>
-        <li>2.打开淘宝客户端，在首页停留3~5秒会跳出优惠券领取页面</li>
-        <li>3.点击打开直接领券购买</li>
+        <li>1.点击“我要领券”按钮，领取优惠券淘口令</li>
+        <li>2.打开【手机淘宝】客户端，在首页停留3~5秒即可跳出优惠券领取页面</li>
+        <li>3.领券成功后再购物，才可享受优惠哦</li>
       </ol>
     </view>
   </view>
-
+  <view class="footer">
+  </view>
   <view class="footer-box">
     <view class="price">
       券后价:<i style="color: #FF6600;font-style: normal;">¥<b style="font-size:20px;">{{product.FP}}</b></i>
@@ -52,6 +53,7 @@
       <view>
         {{product.CP}}元</view>
     </view>
-    <view class="now-buy" bindtap="tobuy">立即领券</view>
+    <view class="now-buy" bindtap="tobuy">我要领券</view>
   </view>
+
 </view>
