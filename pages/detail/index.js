@@ -7,7 +7,9 @@ Page({
    */
   data: {
     product: {},
-    banners: []
+    banners: [],
+    isSuc: false,
+    content:"我要领券",
   },
 
   /**
@@ -45,6 +47,7 @@ Page({
 
   },
   tobuy: function () {
+    var that = this;
     var reqParams = {
       url: this.data.product.SPYHQTGLJ,
       title: this.data.product.SPMC,
@@ -53,31 +56,33 @@ Page({
     app.utils.doGet('tpwd/Create', reqParams, function (resp) {
       var tpwd = '￥xNm40aCaJDR￥';
       if (resp) {
-        tpwd=resp
+        tpwd = resp
       }
-
       wx.setClipboardData({
-        data: resp,
+        data: tpwd,
         success: function (res) {
+          that.setData({
+            isSuc: true,
+            content:"领取成功,请打开【手机淘宝】客户端领券购买"
+          });
           wx.showModal({
             title: '领取成功',
             content: '请打开【手机淘宝】客户端领券购买',
-            showCancel:false,
-            success: function (res) {
-              // if (res.confirm) {
-              //   console.log('用户点击确定')
-              // } 
-            }
-          })
+            showCancel: false
+          });
         },
         fail: function (res) {
+          that.setData({
+            isSuc: false,
+            content:"领取失败请重试"
+          });
           wx.showToast({
-            title: '失败',
+            title: '领取失败请重试',
             icon: 'warn',
             duration: 3000
           });
         }
-      })
+      });
     });
   },
   /**
