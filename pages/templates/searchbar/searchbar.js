@@ -1,5 +1,5 @@
 
-function init(page) {
+function init(page,isHome,callback) {
   var tempData = {
     inputShowed: false,
     inputVal: ""
@@ -23,9 +23,13 @@ function init(page) {
       });
       return;
     }
-    wx.navigateTo({
-      url: '/pages/list/index?kw=' + tempData.inputVal,
-    });
+    if (isHome) {
+      wx.navigateTo({
+        url: '/pages/list/index?kw=' + tempData.inputVal,
+      })
+    } else {
+      typeof callback == "function" && callback(tempData.inputVal);
+    }
   };
   that.clearInput = function () {
     tempData.inputVal = "";
@@ -42,14 +46,19 @@ function init(page) {
   that.inputConfirm = function (e) {
     if (e.detail.value.length <= 0) {
       tempData.inputShowed = true;
+      tempData.inputVal = e.detail.value;
       that.setData({
         searchParam: tempData
       });
       return;
     }
-    wx.navigateTo({
-      url: '/pages/list/index?kw=' + e.detail.value,
-    })
+    if (isHome) {
+      wx.navigateTo({
+        url: '/pages/list/index?kw=' + tempData.inputVal,
+      })
+    } else {
+      typeof callback == "function" && callback(tempData.inputVal);
+    }
   }
 }
 

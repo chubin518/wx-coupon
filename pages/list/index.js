@@ -9,29 +9,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pageno:1,
-    isShow:false,
+    pageno: 1,
+    isShow: false,
     products: [],
-    kw:""
+    kw: ""
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    searchbar.init(this, []);
-    productbox.init(this,[]);
-    var kw=options.kw;
+    searchbar.init(this, false, this.loadMoreData, []);
+    productbox.init(this, []);
+    var kw = options.kw;
     this.setData({
       kw: kw
     });
     wx.setNavigationBarTitle({
       title: kw
-    })
+    });
     this.loadMoreData();
   },
 
-  loadMoreData() {
+  loadMoreData(kw) {
     var that = this;
+    if (kw) {
+      that.setData({
+        kw: kw
+      });
+      wx.setNavigationBarTitle({
+        title: kw
+      });
+      that.setData({
+        products: [],
+        pageno: 1,
+        isShow: false
+      });
+    }
     var reqParams = {
       k: that.data.kw,
       pageno: that.data.pageno

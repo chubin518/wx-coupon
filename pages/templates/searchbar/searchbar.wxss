@@ -32,12 +32,12 @@
 .weui-icon-search_in-box {
   position: absolute;
   left: 10px;
-  top: 7px;
+  top: 8px;
 }
 
 .weui-search-bar__input {
-  height: 28px;
-  line-height: 28px;
+  height: 30px;
+  line-height: 30px;
   color: #999;
 }
 
@@ -45,7 +45,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: 7px 8px;
+  padding:8px;
   font-size: 0;
 }
 
@@ -60,7 +60,7 @@
   text-align: left;
   color: #999;
   background: #eeeff1;
-  line-height: 28px;
+  line-height: 30px;
   padding-left: 10px;
 }
 
@@ -76,14 +76,8 @@
 }
 
 .weui-search-bar__cancel-btn {
-  margin-left: 10px;
-  line-height: 28px;
-  color: #1aad16;
-}
-
-.weui-search-bar__cancel-btn {
   margin-left: 15px;
-  line-height: 28px;
+  line-height: 30px;
   color: #1aad16;
   white-space: nowrap;
   margin-right: 5px;

@@ -16,20 +16,20 @@ Page({
     favoriteNavbars: [],
     currentCat: 1,
     pageno: 1,
-    isShow:false
+    isShow: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    searchbar.init(this, []);
-    productbox.init(this,[]);
+    searchbar.init(this, true, null, []);
+    productbox.init(this, []);
     var that = this;
     wx.getStorage({
       key: 'home_common',
       success: function (res) {
-        if(!res.data){
+        if (!res.data) {
           app.utils.doGet('search/config', {}, function (res) {
             that.initData(res)
             wx.setStorage({
@@ -79,7 +79,7 @@ Page({
   onUnload: function () {
     wx.removeStorage({
       key: 'home_common',
-      success: function (res) { 
+      success: function (res) {
         console.log("remove cache home_common");
       },
     })
@@ -139,7 +139,7 @@ Page({
         that.setData({
           products: datas,
           pageno: reqParams.pageno + 1,
-          isShow: res.Datas.length<=0
+          isShow: res.Datas.length <= 0
         });
       }
     });
@@ -151,8 +151,8 @@ Page({
     this.setData({
       currentCat: e.currentTarget.id,
       pageno: 1,
-      products:[],
-      isShow:false
+      products: [],
+      isShow: false
     });
     this.loadMoreData();
   },
