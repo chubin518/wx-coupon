@@ -11,9 +11,9 @@ Page({
   data: {
     banners: [],
     skillProducts: [],
-    categories: [],
+    categories: [{ "ID": 1, "Name": "综合", "Icon": "" }, { "ID": 2, "Name": "女人", "Icon": "" }, { "ID": 3, "Name": "母婴", "Icon": "" }, { "ID": 4, "Name": "男人", "Icon": "" }, { "ID": 5, "Name": "运动", "Icon": "" }, { "ID": 6, "Name": "家居", "Icon": "" }, { "ID": 7, "Name": "美食", "Icon": "" }, { "ID": 8, "Name": "美妆", "Icon": "" }, { "ID": 9, "Name": "数码", "Icon": "" }, { "ID": 10, "Name": "配饰", "Icon": "" }],
     products: [],
-    favoriteNavbars: [],
+    favoriteNavbars: [{ "ID": 1, "Name": "超值9块9", "Icon": "https://www.51hui.xin/images/9k9.jpg" }, { "ID": 2, "Name": "20元封顶", "Icon": "https://www.51hui.xin/images/20yuan.jpg" }, { "ID": 5, "Name": "母婴热推", "Icon": "https://www.51hui.xin/images/muying.jpg" }, { "ID": 3, "Name": "特价好货", "Icon": "https://www.51hui.xin/images/tejia.jpg" }],
     currentCat: 1,
     pageno: 1,
     isShow: false
@@ -26,30 +26,14 @@ Page({
     searchbar.init(this, true, null, []);
     productbox.init(this, []);
     var that = this;
-    wx.getStorage({
-      key: 'home_common',
-      success: function (res) {
-        if (!res.data) {
-          app.utils.doGet('search/config', {}, function (res) {
-            that.initData(res)
-            wx.setStorage({
-              key: 'home_common',
-              data: res,
-            });
-          });
-        }
-        that.initData(res.data);
-      },
-      fail: function () {
-        app.utils.doGet('search/config', {}, function (res) {
-          that.initData(res)
-          wx.setStorage({
-            key: 'home_common',
-            data: res,
-          });
-        });
-      }
-    })
+
+    app.utils.doGet('search/config', {}, function (res) {
+      that.initData(res);
+      wx.setStorage({
+        key: 'home_common',
+        data: res,
+      });
+    });
     that.loadMoreData();
   },
 
@@ -77,12 +61,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    wx.removeStorage({
-      key: 'home_common',
-      success: function (res) {
-        console.log("remove cache home_common");
-      },
-    })
+
   },
 
   /**

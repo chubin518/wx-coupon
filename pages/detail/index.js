@@ -9,7 +9,10 @@ Page({
     product: {},
     banners: [],
     isSuc: false,
-    content:"我要领券",
+    content: "领取淘口令",
+    tpwd: "￥xNm40aCaJDR￥",
+    images: [],
+    showTbk: 0
   },
 
   /**
@@ -17,20 +20,26 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var key = options.pro;
     var images = [];
+    var key = options.pro;
     wx.getStorage({
       key: key,
       success: function (res) {
         var product = JSON.parse(res.data);
-        images.push({ id: 0, title: product.SPZT });
+        console.log(product.SPID);
+        
+        that.getProductImages(product.SPID);
+
+        //设置产品名称
         wx.setNavigationBarTitle({
           title: product.SPMC,
-        })
+        });
+        images.push({ id: 0, title: product.SPZT });
         that.setData({
           product: product,
           banners: images
         });
+        //去除缓存
         wx.removeStorage({
           key: key,
           success: function (res) { },
@@ -44,7 +53,15 @@ Page({
         wx.navigateBack({});
       }
     });
-
+  },
+  getProductImages: function (pid) {
+    var that=this;
+    app.utils.doGet('search/Images', { pid: pid }, function (res) {
+      that.setData({
+        images: res.Images,
+        showTbk: res.Code
+      });
+    });
   },
   tobuy: function () {
     var that = this;
@@ -54,35 +71,30 @@ Page({
       picurl: this.data.product.SPZT
     };
     app.utils.doGet('tpwd/Create', reqParams, function (resp) {
-      var tpwd = '￥xNm40aCaJDR￥';
       if (resp) {
-        tpwd = resp
+        that.setData({
+          tpwd: resp
+        });
       }
-      wx.setClipboardData({
-        data: tpwd,
-        success: function (res) {
-          that.setData({
-            isSuc: true,
-            content:"领取成功,请打开【手机淘宝】客户端领券购买"
-          });
-          wx.showModal({
-            title: '领取成功',
-            content: '请打开【手机淘宝】客户端领券购买',
-            showCancel: false
-          });
-        },
-        fail: function (res) {
-          that.setData({
-            isSuc: false,
-            content:"领取失败请重试"
-          });
-          wx.showToast({
-            title: '领取失败请重试',
-            icon: 'warn',
-            duration: 3000
-          });
-        }
-      });
+      that.copyTpwd();
+    });
+  },
+  copyTpwd: function () {
+    var that = this;
+    wx.setClipboardData({
+      data: that.data.tpwd,
+      success: function (res) {
+        that.setData({
+          isSuc: true,
+          content: "领取成功，请打开【手机淘宝】客户端领券购买"
+        });
+      },
+      fail: function (res) {
+        that.setData({
+          isSuc: false,
+          content: "领取失败请重试"
+        });
+      }
     });
   },
   /**

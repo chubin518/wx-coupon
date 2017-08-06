@@ -13,7 +13,9 @@
   </view>
 
   <view class="goods-info">
-    <view class="product-title">{{product.SPMC}}</view>
+    <view class="product-title">
+      {{product.SPMC}}
+    </view>
     <view class="product-price">
       <text class="price">￥{{product.FP}}</text>
       <text class="text">券后价</text>
@@ -28,35 +30,58 @@
     </view>
   </view>
 
-  <view class="instruction">
-    <view class="instruction-top">
-      <view class="instruction-left fl">
-        使用说明
+
+  <view class="product_details">
+    <view class="product_details-top">
+      <view class="product_details-left fl">
+        商品详情
       </view>
     </view>
-    <view class="instruction-body">
-      <ol>
-        <li>1.点击“我要领券”按钮，领取优惠券淘口令</li>
-        <li>2.打开【手机淘宝】客户端，在首页停留3~5秒即可跳出优惠券领取页面</li>
-        <li>3.领券成功后再购物，才可享受优惠哦</li>
-      </ol>
+    <view class="product_details-body">
+      <block wx:for="{{images}}" wx:key="index">
+        <view class="productImages">
+          <image src="{{item}}" mode="widthFix"></image>
+        </view>
+      </block>
     </view>
-  </view>
-  <view class="footer">
   </view>
 
-  <view class="footer-box" wx:if="{{!isSuc}}">
-    <view class="price">
-      券后价:<i style="color: #FF6600;font-style: normal;">¥<b style="font-size:20px;">{{product.FP}}</b></i>
+
+  <view>
+
+    <view class="instruction" wx:if="{{showTbk>=10}}">
+      <view class="instruction-top">
+        <view class="instruction-left fl">
+          使用说明
+        </view>
+      </view>
+      <view class="instruction-body">
+        <ol>
+          <li>1.点击“领取淘口令”按钮，领取优惠券淘口令</li>
+          <li>2.打开【手机淘宝】客户端，在首页停留3~5秒会自动跳出优惠券领取页面</li>
+          <li>3.领券后再购物，可享超值优惠</li>
+        </ol>
+      </view>
     </view>
-    <view class="coupon">
-      <view>优惠券</view>
-      <view>
-        {{product.CP}}元</view>
+    <view class="footer">
     </view>
-    <view class="now-buy" bindtap="tobuy">{{content}}</view>
-  </view>
-  <view class="getSuccess" wx:if="{{isSuc}}">
-    {{content}}
+
+    <view class="footer-box" wx:if="{{!isSuc}}">
+      <view class="price">
+        券后价:<i style="color: #FF6600;font-style: normal;">¥<b style="font-size:20px;">{{product.FP}}</b></i>
+      </view>
+      <view class="coupon">
+        <view>优惠券</view>
+        <view>
+          {{product.CP}}元</view>
+      </view>
+      <view class="now-buy" bindtap="tobuy" wx:if="{{showTbk>=10}}">{{content}}</view>
+      <view class="now-buy">
+        <button open-type="contact" class="contactbutton">联系客服</button>
+      </view>
+    </view>
+    <view class="getSuccess" wx:if="{{isSuc}}" bindtap="copyTpwd">
+      {{content}}
+    </view>
   </view>
 </view>
