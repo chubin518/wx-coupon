@@ -1,14 +1,15 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/list/index",
-    "pages/detail/index",
-    "pages/favorite/index"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "91淘券券",
-    "navigationBarTextStyle": "black"
-  }
+    "pages": [
+        "pages/index/index",
+        "pages/list/index",
+        "pages/detail/index",
+        "pages/favorite/index",
+        "pages/advert/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "91淘券券",
+        "navigationBarTextStyle": "black"
+    }
 }

@@ -48,7 +48,6 @@
 
 
   <view>
-
     <view class="instruction" wx:if="{{showTbk>=10}}">
       <view class="instruction-top">
         <view class="instruction-left fl">
@@ -76,7 +75,7 @@
           {{product.CP}}元</view>
       </view>
       <view class="now-buy" bindtap="tobuy" wx:if="{{showTbk>=10}}">{{content}}</view>
-      <view class="now-buy">
+      <view class="now-buy" wx:if="{{showTbk<10}}">
         <button open-type="contact" class="contactbutton">联系客服</button>
       </view>
     </view>

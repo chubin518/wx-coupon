@@ -1,0 +1,8 @@
+/* index.wxss */
+.productImages {
+  display: block;
+}
+
+.productImages image {
+  width: 100%;
+}
