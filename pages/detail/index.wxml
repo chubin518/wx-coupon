@@ -46,7 +46,7 @@
     </view>
   </view>
 
-  <view wx:if="{{showTbk>=10}}">
+  <view wx:if="{{showTbk==10001}}">
     <view class="instruction">
       <view class="instruction-top">
         <view class="instruction-left fl">

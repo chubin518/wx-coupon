@@ -26,13 +26,30 @@ Page({
         searchbar.init(this, true, null, []);
         productbox.init(this, []);
         var that = this;
-
-        app.utils.doGet('search/config', {}, function(res) {
-            that.initData(res);
-            wx.setStorage({
-                key: 'home_common',
-                data: res,
-            });
+        wx.getStorage({
+            key: 'home_common',
+            success: function(res) {
+                if (!res || !res.data) {
+                    app.utils.doGet('search/config', {}, function(resp) {
+                        that.initData(resp);
+                        wx.setStorage({
+                            key: 'home_common',
+                            data: resp,
+                        });
+                    });
+                } else {
+                    that.initData(res.data);
+                }
+            },
+            fail: function(res) {
+                app.utils.doGet('search/config', {}, function(resp) {
+                    that.initData(resp);
+                    wx.setStorage({
+                        key: 'home_common',
+                        data: resp,
+                    });
+                });
+            }
         });
         that.loadMoreData();
     },
