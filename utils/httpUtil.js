@@ -4,7 +4,7 @@ module.exports = {
         wx.showLoading({
             title: '加载中',
         });
-
+        data.ak = config.ak;
         wx.request({
             url: config.baseUri + url,
             method: 'get',
@@ -26,6 +26,7 @@ module.exports = {
         wx.showLoading({
             title: '加载中',
         });
+        data.ak = config.ak;
         wx.request({
             url: config.baseUri + url,
             method: 'post',

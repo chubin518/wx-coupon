@@ -78,7 +78,19 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload: function() {
+        //去除缓存
+        wx.removeStorage({
+            key: 'home_common',
+            success: function(res) {
 
+            },
+        });
+        wx.removeStorage({
+            key: 'home_v',
+            success: function(res) {
+
+            }
+        });
     },
 
     /**
@@ -152,41 +164,20 @@ Page({
         });
         this.loadMoreData();
     },
-    initCurrentSkills: function() {
-        var products = [{
-            id: 0,
-            image: "https://img.alicdn.com/imgextra/i2/1872722147/TB2rWGCvrFkpuFjy1XcXXclapXa_!!1872722147.jpg_240x240.jpg",
-            coupon: 200,
-            price: 50,
-            title: "壁灯床头卧室灯简约现代客厅过道灯"
-        }, {
-            id: 1,
-            image: "https://img.alicdn.com/imgextra/i1/1733862031/TB2JKTUaxolyKJjSZFDXXbNfpXa_!!1733862031.jpg_240x240.jpg",
-            coupon: 10,
-            price: 20,
-            title: "叶罗丽儿童帐篷室内游戏屋梦幻城堡"
-        }, {
-            id: 2,
-            image: "https://img.alicdn.com/imgextra/i3/TB1XEjTRpXXXXb5apXXYXGcGpXX_M2.SS2_240x240.jpg",
-            coupon: 10,
-            price: 20,
-            title: "强力透明无痕胶防水耐高温双面胶"
-        }, {
-            id: 3,
-            image: "https://img.alicdn.com/imgextra/i2/2931349135/TB2s2uMaJAmyKJjSZFKXXXCQXXa_!!2931349135.jpg_240x240.jpg",
-            coupon: 10,
-            price: 20,
-            title: "好伊贝婴儿棉签新生儿耳鼻清洁棒"
-        }];
-        this.setData({
-            skillProducts: products
-        });
-    },
     initData: function(res) {
         var that = this;
-        wx.setNavigationBarTitle({
-            title: res.Title,
+        wx.setStorage({
+            key: 'home_v',
+            data: res.v,
+            success: function(res) {
+
+            }
         });
+        if (res.v == 1) {
+            wx.setNavigationBarTitle({
+                title: res.Title,
+            });
+        }
         that.setData({
             categories: res.Cats,
             favoriteNavbars: res.Favorites,

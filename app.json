@@ -9,7 +9,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "优惠商品导航",
+        "navigationBarTitleText": "首页",
         "navigationBarTextStyle": "black"
     }
 }

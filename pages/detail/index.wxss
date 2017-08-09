@@ -71,6 +71,33 @@ swiper-item image {
   color: #a3a3a3;
 }
 
+.product-plat {
+  position: relative;
+  font-size: 14px;
+  overflow: hidden;
+  padding-left: 10px;
+}
+
+.product-plat .taobao {
+  background: url(https://51hui.xin/images/taobao.png) 0 0 no-repeat;
+  width: 16px;
+  height: 16px;
+  display: block;
+  float: left;
+  margin-top: 3px;
+  margin-right: 5px;
+}
+
+.product-plat .tianmao {
+  background: url(https://51hui.xin/images/tmall.png) 0 0 no-repeat;
+  width: 16px;
+  height: 16px;
+  display: block;
+  float: left;
+  margin-top: 3px;
+  margin-right: 5px;
+}
+
 .product-coupon {
   position: relative;
   float: left;

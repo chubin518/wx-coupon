@@ -10,17 +10,17 @@
     <swiper class="swiper-box" indicator-dots='true' autoplay='true'>
       <block wx:for="{{banners}}" wx:key="id">
         <swiper-item>
-         <navigator url="{{item.url}}">
-          <image src="{{item.icon}}" data-id="{{item.id}}" class="slide-image"></image>
+          <navigator url="{{item.url}}">
+            <image src="{{item.icon}}" data-id="{{item.id}}" class="slide-image"></image>
           </navigator>
         </swiper-item>
       </block>
     </swiper>
   </view>
 
-  <view class="icon-link-wrapper">
+  <view class="icon-link-wrapper" wx:if="{{favoriteNavbars&&favoriteNavbars.length>=1}}">
     <scroll-view scroll-x="true">
-      <view class="item" wx:for="{{favoriteNavbars}}" wx:key="ID"  id="{{item.ID}}" data-title="{{item.Name}}" bindtap="favoriteClick">
+      <view class="item" wx:for="{{favoriteNavbars}}" wx:key="ID" id="{{item.ID}}" data-title="{{item.Name}}" bindtap="favoriteClick">
         <view class="item-img">
           <image src="{{item.Icon}}"></image>
         </view>

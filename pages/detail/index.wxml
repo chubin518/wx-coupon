@@ -4,9 +4,9 @@
 
   <view class="swiper-container">
     <swiper class="swiper-box" indicator-dots='true' autoplay='true'>
-      <block wx:for="{{banners}}" wx:key="id">
+      <block wx:for="{{banners}}" wx:key="index">
         <swiper-item>
-          <image src="{{item.title}}" class="slide-image"></image>
+          <image src="{{item}}" class="slide-image"></image>
         </swiper-item>
       </block>
     </swiper>
@@ -15,6 +15,11 @@
   <view class="goods-info">
     <view class="product-title">
       {{product.SPMC}}
+    </view>
+    <view class="product-plat">
+      <view class="taobao" wx:if="{{product.PTLX!=1}}"></view>
+      <view class="tianmao" wx:else></view>
+      {{product.DPMC}}
     </view>
     <view class="product-price">
       <text class="price">￥{{product.FP}}</text>
@@ -46,7 +51,7 @@
     </view>
   </view>
 
-  <view wx:if="{{showTbk==10001}}">
+  <view wx:if="{{showTbk==1}}">
     <view class="instruction">
       <view class="instruction-top">
         <view class="instruction-left fl">
