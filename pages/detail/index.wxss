@@ -1,4 +1,68 @@
 /* index.wxss */
+@import "../templates/productbox/productbox.wxss";
+
+.shopheader {
+  display: flex;
+  padding: 0 10px;
+  border-top: 1px solid #f7f7f7;
+  padding-top: 3px;
+}
+
+.shopinfo {
+  padding-left: 10px;
+  color: #a3a3a3;
+}
+
+.shopinfo .shoptitle {
+  height: 25px;
+  line-height: 25px;
+}
+
+.shopicon image {
+  width: 50px;
+  height: 50px;
+}
+
+.product-info-evaluates {
+  display: flex;
+  text-align: center;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+.product-info-evaluates .evaluates-item {
+  flex: 1 0 auto;
+  padding-right: 15px;
+}
+
+.product-info-evaluates .evaluates-item .score {
+  color: red;
+  padding-left: 3px;
+}
+
+.goods-tab-box {
+  background-color: white;
+  margin-top: 10px;
+}
+
+.goods-tab-nav {
+  display: inline-block;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 2px solid #ededed;
+  text-align: center;
+  font-size: 16px;
+  width: 50%;
+  box-sizing: content-box;
+}
+
+.goods-content {
+  margin-top: 3px;
+}
+
+.goods-tab-nav.on {
+  border-bottom: 2px solid #e64340;
+}
 
 .swiper-container {
   width: 100%;
@@ -27,58 +91,60 @@ swiper-item image {
   margin: 0px;
 }
 
-.product-title {
+.product-info-title {
   word-break: break-all;
   word-wrap: break-word;
   text-align: left;
   font-size: 16px;
   padding: 10px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 5px;
 }
 
-.product-price {
+.product-info-price {
   color: #ccc;
   line-height: 1.5;
-  padding-top: 10px;
   vertical-align: middle;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
 }
 
-.product-price text {
+.product-info-price text {
   color: #a3a3a3;
   display: inline-block;
 }
 
-.product-price .price {
+.product-info-price .price {
   color: red;
   padding: 0 10rpx;
   display: inline-block;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
 }
 
-.product-price .sold-wrapper {
+.product-info-price .soldprice {
+  margin-left: 5px;
+  text-decoration: line-through;
+  font-size: 12px;
+}
+
+.product-info-price .sold-wrapper {
   position: relative;
   float: right;
   padding-right: 12px;
   margin-top: 3px;
 }
 
-.product-price .sold-wrapper .sold-num {
+.product-info-price .sold-wrapper .sold-numq {
   color: #ecabab;
 }
 
-.product-price .sold-wrapper .text {
+.product-info-price .sold-wrapper .text {
   color: #a3a3a3;
 }
 
-.product-plat {
-  position: relative;
-  font-size: 14px;
-  overflow: hidden;
-  padding-left: 10px;
-}
-
-.product-plat .taobao {
+.product-info-title .taobao {
   background: url(https://51hui.xin/images/taobao.png) 0 0 no-repeat;
   width: 16px;
   height: 16px;
@@ -88,7 +154,7 @@ swiper-item image {
   margin-right: 5px;
 }
 
-.product-plat .tianmao {
+.product-info-title .tianmao {
   background: url(https://51hui.xin/images/tmall.png) 0 0 no-repeat;
   width: 16px;
   height: 16px;
@@ -98,14 +164,14 @@ swiper-item image {
   margin-right: 5px;
 }
 
-.product-coupon {
+.product-info-coupon {
   position: relative;
   float: left;
   left: 150px;
   margin-top: 3px;
 }
 
-.product-coupon .c-text {
+.product-info-coupon .c-text {
   position: absolute;
   left: 0;
   width: 21px;
@@ -115,7 +181,7 @@ swiper-item image {
   color: white;
 }
 
-.product-coupon .coupon-price {
+.product-info-coupon .coupon-price {
   position: absolute;
   left: 21px;
   margin: 0;
@@ -153,8 +219,8 @@ swiper-item image {
 
 .product_details {
   background-color: white;
-  margin-top: 10px;
-  margin-bottom: 10rpx;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .product_details-top {
@@ -171,11 +237,11 @@ swiper-item image {
   padding-left: 10px;
 }
 
-.productImages {
+.product-info-Images {
   display: block;
 }
 
-.productImages image {
+.product-info-Images .image {
   width: 100%;
 }
 
