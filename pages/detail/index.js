@@ -22,14 +22,10 @@ Page({
         var that = this;
         var images = [];
         var key = options.pro;
-        wx.getStorage({
-            key: 'home_v',
-            success(res) {
-                that.setData({
-                    showTbk: res.data
-                });
-            }
+        that.setData({
+            showTbk: app.utils.showTbk
         });
+
         wx.getStorage({
             key: key,
             success: function(res) {

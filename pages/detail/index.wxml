@@ -35,6 +35,20 @@
     </view>
   </view>
 
+    <view class="instruction" wx:if="{{showTbk==1}}">
+      <view class="instruction-top">
+        <view class="instruction-left fl">
+          使用说明
+        </view>
+      </view>
+      <view class="instruction-body">
+        <ol>
+          <li>1.点击“领取淘口令”按钮，领取优惠券淘口令</li>
+          <li>2.打开【手机淘宝】客户端，在首页停留3~5秒会自动跳出优惠券领取页面</li>
+          <li>3.领券后再购物，可享超值优惠</li>
+        </ol>
+      </view>
+    </view>
 
   <view class="product_details">
     <view class="product_details-top">
@@ -52,20 +66,6 @@
   </view>
 
   <view wx:if="{{showTbk==1}}">
-    <view class="instruction">
-      <view class="instruction-top">
-        <view class="instruction-left fl">
-          使用说明
-        </view>
-      </view>
-      <view class="instruction-body">
-        <ol>
-          <li>1.点击“领取淘口令”按钮，领取优惠券淘口令</li>
-          <li>2.打开【手机淘宝】客户端，在首页停留3~5秒会自动跳出优惠券领取页面</li>
-          <li>3.领券后再购物，可享超值优惠</li>
-        </ol>
-      </view>
-    </view>
     <view class="footer">
     </view>
 

@@ -1,4 +1,4 @@
 module.exports = {
     baseUri: 'https://www.51hui.xin/',
-    ak: "d4c43169e4fe4eeb8d5dffe6d6d469e2"
+    ak: "7405d6fa88b343e6adc01ae9ee3d31fb"
 };
