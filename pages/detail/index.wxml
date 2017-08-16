@@ -77,6 +77,8 @@
       <view wx:if="{{curIndex ==1}}">
         <import src="../templates/productbox/productbox.wxml" />
         <template data="{{products}}" is="productbox"></template>
+        <import src="../templates/loadmore/loadmore.wxml" />
+        <template is="loadmore"></template>
       </view>
     </view>
   </view>

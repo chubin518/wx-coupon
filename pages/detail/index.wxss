@@ -1,6 +1,6 @@
 /* index.wxss */
 @import "../templates/productbox/productbox.wxss";
-
+@import "../templates/loadmore/loadmore.wxss";
 .shopheader {
   display: flex;
   padding: 0 10px;
@@ -86,7 +86,6 @@ swiper-item image {
 
 .goods-info {
   background-color: #fff;
-  margin-bottom: 8px;
   width: 100%;
   margin: 0px;
 }
@@ -253,8 +252,8 @@ swiper-item image {
 
 .instruction {
   background-color: white;
+  margin-bottom: 10px;
   margin-top: 10px;
-  margin-bottom: 10rpx;
   height: 180px;
 }
 
