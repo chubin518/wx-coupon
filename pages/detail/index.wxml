@@ -16,7 +16,7 @@
     <view class="product-info-title">
       <view class="taobao" wx:if="{{couponInfo.PTLX!=1}}"></view>
       <view class="tianmao" wx:else></view>
-      {{productInfo.SPMC}}
+      <text selectable='true'> {{productInfo.SPMC}}</text>
     </view>
     <view class="product-info-price">
       <text class="text">券后价</text>

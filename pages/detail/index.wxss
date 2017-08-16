@@ -167,7 +167,7 @@ swiper-item image {
 .product-info-coupon {
   position: relative;
   float: left;
-  left: 150px;
+  left: 200px;
   margin-top: 3px;
 }
 
@@ -302,6 +302,7 @@ ol li {
   box-shadow: 0 0 8rpx 0;
   line-height: 100rpx;
   border: 0;
+  z-index: 1000;
 }
 
 .footer-box .price {
