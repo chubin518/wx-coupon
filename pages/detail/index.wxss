@@ -166,7 +166,7 @@ swiper-item image {
 .product-info-coupon {
   position: relative;
   float: left;
-  left: 200px;
+  left: 180px;
   margin-top: 3px;
 }
 

@@ -75,7 +75,15 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    
+  },
+  binnerClick: function (e) {
+    var url = e.currentTarget.dataset.url;
+    if (url && url.length >= 1) {
+      wx.navigateTo({
+        url: url
+      })
+    }
   },
   favoriteClick: function (e) {
     var id = e.currentTarget.id;

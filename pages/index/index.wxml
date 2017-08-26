@@ -8,11 +8,12 @@
 
   <view wx:if="{{banners&&banners.length>=1}}" class="swiper-container">
     <swiper class="swiper-box" indicator-dots='true' autoplay='true'>
-      <block wx:for="{{banners}}" wx:key="id">
+      <block wx:for="{{banners}}" wx:key="ID">
         <swiper-item>
-          <navigator url="{{item.url}}">
-            <image src="{{item.icon}}" data-id="{{item.id}}" class="slide-image"></image>
-          </navigator>
+          <!-- <navigator wx:if="item.Url.length>=1" url="{{item.Url}}">
+            <image src="{{item.Icon}}" data-id="{{item.ID}}" class="slide-image"></image>
+          </navigator> -->
+           <image bindtap="binnerClick" data-url="{{item.Url}}" src="{{item.Icon}}" data-id="{{item.ID}}" class="slide-image"></image>
         </swiper-item>
       </block>
     </swiper>

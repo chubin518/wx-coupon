@@ -101,7 +101,7 @@
     <view class="footer">
     </view>
 
-    <view class="footer-box" wx:if="{{!isSuc}}">
+    <view class="footer-box" wx:if="{{!isSuc}}" bindtap="tobuy">
       <view class="price">
         券后价:<i style="color: #FF6600;font-style: normal;">¥<b style="font-size:20px;">{{couponInfo.FP}}</b></i>
       </view>
@@ -110,7 +110,7 @@
         <view>
           {{couponInfo.CP}}元</view>
       </view>
-      <view class="now-buy" bindtap="tobuy">{{content}}</view>
+      <view class="now-buy">{{content}}</view>
     </view>
     <view class="getSuccess" wx:if="{{isSuc}}" bindtap="copyTpwd">
       {{content}}
